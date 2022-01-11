@@ -22,3 +22,22 @@ body {
 .trybewarts-login {
   display: flex;
 }
+
+main {
+  display: flex;
+}
+
+#evaluation-form {
+  display: flex;
+  flex-direction: column;
+  width: 675px;
+}
+
+#evaluation-form {
+  height: 40px;
+  width: 400px;
+}
+
+#trybewarts-forms-logo {
+  width: 500px;
+}
