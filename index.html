@@ -11,14 +11,40 @@
   <header class="header">
     <img src="images/trybewarts-header-logo.svg" class="trybewarts-header-logo">
     <h1 id="trybewarts-header-title">Trybewarts</h1>
-    <form>
-      <form action="GET" class="trybewarts-login">
-        <input type="text" name="email" id="" placeholder="Email">
-        <input type="text" name="password" id="" placeholder="Senha">
+    <form action="GET" class="trybewarts-login">
+        <input type="email" name="email" id="" placeholder="Email">
+        <input type="password" name="password" id="" placeholder="Senha">
       <button>Entrar</button>
     </form>
   </header>
-  
+  <main> 
+    <form action="GET" id="evaluation-form">
+      <input type="text" id="input-name" placeholder="Nome">
+      <input type="text" id="input-lastname" placeholder="Sobrenome">
+      <input type="email" id="input-email" placeholder="Email">
+      <select name="" id="house">
+        <option value="Gitnória" id="gitnoria-house">Gitnória</option>
+        <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
+        <option value="Corvinode" id="corvinode-house">Corvinode</option>
+        <option value="Pytherina" id="pytherina-house">Pytherina</option>
+      </select>
+      <hr>
+      <label for="input-qual" id="label-family">Qual sua família?
+        <input type="radio" name="family" value="Frontend" id="input-qual">Frontend
+        <input type="radio" name="family" value="Backend" id="input-qual">Backend
+        <input type="radio" name="family" value="Fullstack" id="input-qual">Fullstack
+      </label>
+      <label for="" id="label-content">Qual conteúdo você está com mais vontade de aprender?
+        <input type="checkbox" name="HoFs" value="HoFs" id="input-check">HoFs
+        <input type="checkbox" name="Jest" value="Jest" id="input-check">Jest
+        <input type="checkbox" name="Promises" value="Promises" id="input-check">Promises
+        <input type="checkbox" name="React" value="React" id="input">React
+        <input type="checkbox" name="SQL" value="SQL" id="input">SQL
+        <input type="checkbox" name="Python" value="" id="input">Python
+      </label>
+    </form> 
+    <img src="images/trybewarts-colored.svg" id="trybewarts-forms-logo">
+  </main> 
   <script src="script.js"></script>
   </body>
 </html>
