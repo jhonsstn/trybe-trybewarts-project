@@ -35,9 +35,26 @@ main {
 
 #evaluation-form {
   height: 40px;
-  width: 400px;
+  width: 675px;
 }
 
 #trybewarts-forms-logo {
   width: 500px;
+}
+
+.section-2 {
+  display: flex;
+  max-width: 50%;
+}
+
+#label-family {
+  display: flex;
+  flex-flow: row wrap;
+  width: 600px;
+}
+
+#label-content {
+  display: flex;
+  flex-flow: row wrap;
+  width: 600px;
 }
