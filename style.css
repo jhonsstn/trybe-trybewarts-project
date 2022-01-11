@@ -55,6 +55,10 @@ main {
 
 #label-content {
   display: flex;
-  flex-flow: row wrap;
-  width: 600px;
+  flex-direction: column;
+  width: 800px;
+}
+
+.label-content {
+  display: flex;
 }
