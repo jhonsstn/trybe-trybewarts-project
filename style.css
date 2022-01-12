@@ -53,6 +53,7 @@ main {
 }
 
 #label-content {
+<<<<<<< HEAD
   width: 600px;
   display: block;
 }
@@ -64,6 +65,15 @@ main {
 #div-content {
   display: flexbox;
   width: 200px;
+=======
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+}
+
+.label-content {
+  display: flex;
+>>>>>>> 8bbb537f396471ddb2d6e8a45774a2710dfb9502
 }
 
 #div-check {
