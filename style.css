@@ -28,33 +28,48 @@ main {
 }
 
 #evaluation-form {
-  display: flex;
   flex-direction: column;
-  width: 675px;
-}
-
-#evaluation-form {
-  height: 40px;
   width: 675px;
 }
 
 #trybewarts-forms-logo {
   width: 500px;
+  height: 500px;
 }
 
 .section-2 {
   display: flex;
-  max-width: 50%;
+  max-width: 70%;
 }
 
 #label-family {
-  display: flex;
-  flex-flow: row wrap;
-  width: 600px;
+  width: 200px;
+  margin-right: 20px;
+}
+
+#input-qual {
+  align-self: center;
+  margin-bottom: 15px;
 }
 
 #label-content {
-  display: flex;
-  flex-flow: row wrap;
   width: 600px;
+  display: block;
+}
+
+#input-check {
+  flex-wrap: wrap;
+}
+
+#div-content {
+  display: flexbox;
+  width: 200px;
+}
+
+#div-check {
+  width: 200px;
+}
+
+#label-rate {
+  display: flex;
 }
