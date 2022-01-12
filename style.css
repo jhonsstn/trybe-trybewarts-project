@@ -71,6 +71,16 @@ main {
   width: 200px;
 }
 
+.section-3 {
+  display: flexbox;
+  width: 550px;
+}
+
 #label-rate {
+  display: inline
+}
+
+.textarea {
+  margin-top: 20px;
   display: flex;
 }
