@@ -4,6 +4,10 @@ let loginEmail = document.getElementById("user-email");
 
 let loginPassword = document.getElementById("user-password");
 
+let textArea = document.getElementById("textarea");
+
+let showCounter = document.getElementById("counter");
+
 loginButton.addEventListener("click", () => {
   if (
     loginEmail.value == "tryber@teste.com" &&
@@ -14,10 +18,6 @@ loginButton.addEventListener("click", () => {
     alert("Email ou senha inválidos.");
   }
 });
-
-let textArea = document.getElementById("textarea");
-
-let showCounter = document.getElementById("counter");
 
 textArea.addEventListener("keyup", () => {
   textChars = textArea.value;
