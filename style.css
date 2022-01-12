@@ -65,7 +65,7 @@ main {
 }
 
 #div-content {
-  display: flexbox;
+  display: block;
   width: 200px;
 }
 
@@ -74,7 +74,7 @@ main {
 }
 
 .section-3 {
-  display: flexbox;
+  display: block;
   width: 550px;
 }
 
@@ -85,4 +85,8 @@ main {
 .textarea {
   margin-top: 20px;
   display: flex;
+}
+
+p {
+  margin: 0;
 }
