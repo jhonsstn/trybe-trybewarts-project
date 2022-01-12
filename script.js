@@ -1,30 +1,30 @@
-let loginButton = document.getElementById("login-button");
+const loginButton = document.getElementById("login-button");
 
-let loginEmail = document.getElementById("user-email");
+const loginEmail = document.getElementById("user-email");
 
-let loginPassword = document.getElementById("user-password");
+const loginPassword = document.getElementById("user-password");
 
-let textArea = document.getElementById("textarea");
+const textArea = document.getElementById("textarea");
 
-let showCounter = document.getElementById("counter");
+const showCounter = document.getElementById("counter");
 
 loginButton.addEventListener("click", () => {
   if (
-    loginEmail.value == "tryber@teste.com" &&
-    loginPassword.value == "123456"
+    loginEmail.value === 'tryber@teste.com' &&
+    loginPassword.value === '123456'
   ) {
-    alert("Olá, Tryber!");
+    alert('Olá, Tryber!');
   } else {
-    alert("Email ou senha inválidos.");
+    alert('Email ou senha inválidos.');
   }
 });
 
 textArea.addEventListener("keyup", () => {
-  textChars = textArea.value;
+  let textChars = textArea.value;
 
-  textCharsLength = textChars.length;
+  let textCharsLength = textChars.length;
 
-  charsRemain = 500 - textCharsLength;
+  let charsRemain = 500 - textCharsLength;
 
   showCounter.innerHTML = charsRemain;
 });
