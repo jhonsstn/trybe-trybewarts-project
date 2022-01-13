@@ -24,7 +24,7 @@ const house = document.getElementById('house');
 
 const family = document.getElementsByName('family');
 
-// const subjects = document.querySelectorAll('#input-check');
+const subjects = document.querySelectorAll('#input-check');
 
 loginButton.addEventListener('click', () => {
   if (loginEmail.value === 'tryber@teste.com' && loginPassword.value === '123456') {
@@ -61,28 +61,49 @@ function createFormElement(name, value) {
   return formElement;
 }
 
+let fullName = '';
+let selectedHouse = '';
+let selectedFamily = '';
+let subjectsString = '';
+
 submitButton.addEventListener('click', () => {
-  const fullName = `${firstName.value} ${lastName.value}`;
+  fullName = `${firstName.value} ${lastName.value}`;
+  selectedHouse = house.options[house.selectedIndex].value;
 
-  const selectedHouse = house.options[house.selectedIndex].value;
-
-  let selectedFamily = '';
   for (let i = 0; i < family.length; i += 1) {
     if (family[i].checked) {
       selectedFamily = family[i].value;
     }
   }
 
-  form.innerHTML = '';
+  let selectedSubjects = [];
 
+  subjects.forEach((item) => {
+    if (item.checked) {
+      selectedSubjects.push(item.value);
+    }
+  });
+
+  subjectsString = selectedSubjects[0];
+
+  for (let i = 0; i < selectedSubjects.length - 1; i += 1) {
+    subjectsString += `, ${selectedSubjects[i + 1]}`;
+  }
+
+  form.innerHTML = '';
+  appendFormItens();
+});
+
+subjects.forEach((item) => {
+  if (item.checked) {
+    console.log(item.value);
+  }
+});
+
+function appendFormItens() {
   form.appendChild(createFormElement('Nome', fullName));
   form.appendChild(createFormElement('Email', email.value));
   form.appendChild(createFormElement('Casa', selectedHouse));
   form.appendChild(createFormElement('Família', selectedFamily));
-});
-
-// subjects.forEach( (item) => {
-//   if (item.checked) {
-//       console.log(item.value)
-//   }
-// })
+  form.appendChild(createFormElement('Matérias', subjectsString));
+}
