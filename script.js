@@ -26,6 +26,8 @@ const family = document.getElementsByName('family');
 
 const subjects = document.querySelectorAll('#input-check');
 
+const rate = document.getElementsByName('rate');
+
 loginButton.addEventListener('click', () => {
   if (loginEmail.value === 'tryber@teste.com' && loginPassword.value === '123456') {
     alert('Olá, Tryber!');
@@ -65,6 +67,7 @@ let fullName = '';
 let selectedHouse = '';
 let selectedFamily = '';
 let subjectsString = '';
+let selectedRate = '';
 
 submitButton.addEventListener('click', () => {
   fullName = `${firstName.value} ${lastName.value}`;
@@ -90,6 +93,12 @@ submitButton.addEventListener('click', () => {
     subjectsString += `, ${selectedSubjects[i + 1]}`;
   }
 
+  for (let i = 0; i < rate.length; i += 1) {
+    if (rate[i].checked) {
+      selectedRate = rate[i].value;
+    }
+  }
+
   form.innerHTML = '';
   appendFormItens();
 });
@@ -106,4 +115,6 @@ function appendFormItens() {
   form.appendChild(createFormElement('Casa', selectedHouse));
   form.appendChild(createFormElement('Família', selectedFamily));
   form.appendChild(createFormElement('Matérias', subjectsString));
+  form.appendChild(createFormElement('Avaliação', selectedRate));
+  form.appendChild(createFormElement('Observações', textArea.value));
 }
