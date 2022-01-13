@@ -63,23 +63,23 @@ function createFormElement(name, value) {
   return formElement;
 }
 
-let fullName = '';
-let selectedHouse = '';
-let selectedFamily = '';
-let subjectsString = '';
-let selectedRate = '';
+let fullName;
+let selectedHouse;
+let selectedFamily;
+let subjectsString;
+let selectedRate;
 
-submitButton.addEventListener('click', () => {
-  fullName = `${firstName.value} ${lastName.value}`;
-  selectedHouse = house.options[house.selectedIndex].value;
-
+function familySelection() {
   for (let i = 0; i < family.length; i += 1) {
     if (family[i].checked) {
       selectedFamily = family[i].value;
     }
   }
+  return selectedFamily;
+}
 
-  let selectedSubjects = [];
+function subjectSelection() {
+  const selectedSubjects = [];
 
   subjects.forEach((item) => {
     if (item.checked) {
@@ -87,27 +87,23 @@ submitButton.addEventListener('click', () => {
     }
   });
 
-  subjectsString = selectedSubjects[0];
+  subjectsString = selectedSubjects.shift();
 
-  for (let i = 0; i < selectedSubjects.length - 1; i += 1) {
-    subjectsString += `, ${selectedSubjects[i + 1]}`;
+  for (let i = 0; i < selectedSubjects.length; i += 1) {
+    subjectsString += `, ${selectedSubjects[i]}`;
   }
 
+  return subjectsString;
+}
+
+function rateSelection() {
   for (let i = 0; i < rate.length; i += 1) {
     if (rate[i].checked) {
       selectedRate = rate[i].value;
     }
   }
-
-  form.innerHTML = '';
-  appendFormItens();
-});
-
-subjects.forEach((item) => {
-  if (item.checked) {
-    console.log(item.value);
-  }
-});
+  return selectedRate;
+}
 
 function appendFormItens() {
   form.appendChild(createFormElement('Nome', fullName));
@@ -118,3 +114,18 @@ function appendFormItens() {
   form.appendChild(createFormElement('Avaliação', selectedRate));
   form.appendChild(createFormElement('Observações', textArea.value));
 }
+
+submitButton.addEventListener('click', () => {
+  fullName = `${firstName.value} ${lastName.value}`;
+  selectedHouse = house.options[house.selectedIndex].value;
+
+  familySelection();
+
+  subjectSelection();
+
+  rateSelection();
+
+  form.innerHTML = '';
+
+  appendFormItens();
+});
